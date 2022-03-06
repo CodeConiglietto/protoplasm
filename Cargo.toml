@@ -1,0 +1,30 @@
+[package]
+name = "protoplasm"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+lazy_static = "1.4.0"
+nalgebra = { version = "0.30.1", features = ["serde-serialize"] }
+ndarray = { version = "0.15.1", features = ["rayon", "serde"] }
+rand = "0.8.5"
+regex = "1.5.4"
+serde = { version = "1.0.136", features = ["derive"] }
+mutagen = { path = "../mutagen" }
+mutagen-derive = { path = "../mutagen-derive" }
+serde_json = "1.0.79"
+serde_yaml = "0.8.23"
+bresenham = "0.1.1"
+lerp = "0.4.0"
+walkdir = "2.3.2"
+float-ord = "0.3.2"
+noise = "0.7.0"
+approx = "0.5.1"
+palette = "0.5.0"
+log = "0.4.14"
+failure = {version = "0.1.8", features = ["backtrace"]}
+num = "0.4.0"
+rand_pcg = "0.3.1"
+image = {version = "0.24.1", default-features = false}
