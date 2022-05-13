@@ -144,8 +144,8 @@ where
     fn generate_rng<R: Rng + ?Sized>(rng: &mut R, mut arg: Self::GenArg) -> Self {
         Self::new(Array2::from_shape_fn(
             (
-                Byte::generate_rng(rng, arg.reborrow()).into_inner() as usize,
-                Byte::generate_rng(rng, arg.reborrow()).into_inner() as usize,
+                Byte::generate_rng(rng, arg.reborrow()).into_inner() as usize + 1,
+                Byte::generate_rng(rng, arg.reborrow()).into_inner() as usize + 1,
             ),
             move |(_y, _x)| {
                 let a: ProtoGenArg<'_> = ProtoGenArg::<'a>::reborrow(&mut arg);
