@@ -155,6 +155,18 @@ impl SNPoint {
     }
 
     // TODO Refactor this when polar point datatype is added
+    #[allow(clippy::wrong_self_convention)]
+    pub fn from_polar_components(theta: Angle, rho: UNFloat) -> Self {
+        let theta = theta.into_inner();
+        let rho = rho.into_inner();
+
+        Self::from_snfloats(
+            SNFloat::new(rho * f32::sin(theta)),
+            SNFloat::new(rho * f32::cos(theta)),
+        )
+    }
+
+    // TODO Refactor this when polar point datatype is added
     pub fn from_complex(value: SNComplex) -> Self {
         Self::from_snfloats(value.re(), value.im())
     }
